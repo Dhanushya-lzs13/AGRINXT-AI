@@ -1,194 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AGRINXT AI | Login</title>
+<meta charset="UTF-8">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<title>AGRINXT AI | Login</title>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="login.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<link rel="stylesheet"
+href="login.css">
+
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<div class="bg-grid"></div>
 
-<nav class="navbar navbar-expand-lg navbar-dark py-3">
+<div class="bg-circle c1"></div>
 
-    <div class="container">
+<div class="bg-circle c2"></div>
 
-        <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
-
-            <i class="bi bi-globe-central-south-asia fs-2 me-2"></i>
-
-            <div>
-
-                <div class="logo-title">
-                    AGRINXT AI
-                </div>
-
-                <small>
-                    Agricultural Export Intelligence Platform
-                </small>
-
-            </div>
-
-        </a>
-
-        <div class="d-flex align-items-center">
-
-            <!-- Language -->
-
-            <select class="form-select language-select me-3">
-
-                <option>English</option>
-
-                <option>தமிழ்</option>
-
-                <option>हिन्दी</option>
-
-            </select>
-
-            <!-- Dark Mode -->
-
-            <button
-            class="btn btn-outline-light rounded-circle"
-            id="themeBtn">
-
-                <i class="bi bi-moon-stars-fill"></i>
-
-            </button>
-
-        </div>
-
-    </div>
-
-</nav>
-
-<!-- ================= MAIN ================= -->
+<header>
 
 <div class="container">
 
-<div class="row align-items-center min-vh-100">
+<nav>
 
-<!-- LEFT -->
+<div class="logo">
 
-<div class="col-lg-6 mb-5 mb-lg-0">
+<div class="logo-icon">
 
-<h1 class="display-4 fw-bold">
+<i class="bi bi-globe-central-south-asia"></i>
 
-Welcome to
+</div>
 
-<span class="text-success">
+<div>
 
-AGRINXT AI
+<h2>AGRINXT AI</h2>
+
+<p>Agricultural Export Intelligence Platform</p>
+
+</div>
+
+</div>
+
+<div class="nav-right">
+
+<a href="dashboard.html">Home</a>
+
+<a href="policy.html">Policy</a>
+
+<a href="assistant.html">AI Assistant</a>
+
+<select>
+
+<option>English</option>
+
+<option>தமிழ்</option>
+
+<option>हिन्दी</option>
+
+</select>
+
+<button id="themeBtn">
+
+<i class="bi bi-moon-stars-fill"></i>
+
+</button>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-7">
+
+<span class="tag">
+
+🌿 AI Powered Agricultural Export Platform
 
 </span>
 
+<h1>
+
+Connecting Farmers
+
+<span>
+
+to Global Buyers
+
+</span>
+
+with Artificial Intelligence.
+
 </h1>
 
-<p class="lead mt-4">
-
-Empowering farmers, exporters and importers with Artificial Intelligence,
-smart documentation, buyer discovery and global agricultural trade.
-
-</p>
-
-<!-- FEATURES -->
-
-<div class="row mt-5 g-4">
-
-<div class="col-md-6">
-
-<div class="feature-card">
-
-<i class="bi bi-robot fs-2 text-success"></i>
-
-<h5>
-
-AI Export Assistant
-
-</h5>
-
 <p>
 
-Instant AI guidance for export procedures.
+Empowering farmers, exporters and importers with AI-powered documentation, market intelligence and secure global trade.
 
 </p>
 
-</div>
+<div class="hero-buttons">
+
+<button class="btn-start">
+
+Get Started
+
+</button>
+
+<button class="btn-demo">
+
+Watch Demo
+
+</button>
 
 </div>
 
-<div class="col-md-6">
+<div class="hero-visual">
 
-<div class="feature-card">
+<div class="glow"></div>
 
-<i class="bi bi-file-earmark-text fs-2 text-success"></i>
+<img
+src="images/agriculture-ai.svg"
+alt="AGRINXT AI Illustration"
+class="hero-img">
 
-<h5>
+<div class="floating-card card-one">
 
-Smart Documentation
+<i class="bi bi-robot"></i>
 
-</h5>
-
-<p>
-
-Generate export documents automatically.
-
-</p>
+<span>AI Export Assistant</span>
 
 </div>
 
-</div>
+<div class="floating-card card-two">
 
-<div class="col-md-6">
+<i class="bi bi-graph-up-arrow"></i>
 
-<div class="feature-card">
-
-<i class="bi bi-graph-up-arrow fs-2 text-success"></i>
-
-<h5>
-
-Market Analytics
-
-</h5>
-
-<p>
-
-AI-driven market trends and crop pricing.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-6">
-
-<div class="feature-card">
-
-<i class="bi bi-globe2 fs-2 text-success"></i>
-
-<h5>
-
-Global Buyers
-
-</h5>
-
-<p>
-
-Connect with trusted international buyers.
-
-</p>
+<span>Live Market Analysis</span>
 
 </div>
 
@@ -196,103 +173,39 @@ Connect with trusted international buyers.
 
 </div>
 
-<!-- STATS -->
+<!-- ================= LOGIN CARD ================= -->
 
-<div class="row text-center mt-5">
-
-<div class="col-3">
-
-<h3>
-
-10K+
-
-</h3>
-
-<p>
-
-Farmers
-
-</p>
-
-</div>
-
-<div class="col-3">
-
-<h3>
-
-35+
-
-</h3>
-
-<p>
-
-Countries
-
-</p>
-
-</div>
-
-<div class="col-3">
-
-<h3>
-
-50K+
-
-</h3>
-
-<p>
-
-Exports
-
-</p>
-
-</div>
-
-<div class="col-3">
-
-<h3>
-
-24/7
-
-</h3>
-
-<p>
-
-Support
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- RIGHT -->
-
-<div class="col-lg-5 offset-lg-1">
+<div class="col-lg-5">
 
 <div class="login-card">
 
-<h2 class="text-center fw-bold">
+<div class="login-header">
+
+<div class="shield">
+
+<i class="bi bi-shield-lock-fill"></i>
+
+</div>
+
+<h2>
 
 Welcome Back 👋
 
 </h2>
 
-<p class="text-center text-muted mb-4">
+<p>
 
-Sign in to continue
+Sign in to continue your export journey.
 
 </p>
 
-<form>
+</div>
 
-<!-- ROLE -->
+<form>
 
 <div class="mb-3">
 
-<label class="form-label">
+<label>
 
 Login As
 
@@ -312,11 +225,9 @@ Login As
 
 </div>
 
-<!-- USERNAME -->
-
 <div class="mb-3">
 
-<label class="form-label">
+<label>
 
 Username / Email
 
@@ -333,17 +244,15 @@ Username / Email
 <input
 type="text"
 class="form-control"
-placeholder="Enter your username">
+placeholder="Enter Username">
 
 </div>
 
 </div>
-
-<!-- PASSWORD -->
 
 <div class="mb-3">
 
-<label class="form-label">
+<label>
 
 Password
 
@@ -359,13 +268,13 @@ Password
 
 <input
 type="password"
-class="form-control"
 id="password"
-placeholder="Enter your password">
+class="form-control"
+placeholder="Enter Password">
 
 <button
 type="button"
-class="btn btn-outline-secondary"
+class="btn eye-btn"
 onclick="togglePassword()">
 
 <i class="bi bi-eye"></i>
@@ -376,18 +285,15 @@ onclick="togglePassword()">
 
 </div>
 
-<!-- OPTIONS -->
+<div class="login-options">
 
-<div class="d-flex justify-content-between mb-4">
+<label>
 
-<div>
-
-<input
-type="checkbox">
+<input type="checkbox">
 
 Remember Me
 
-</div>
+</label>
 
 <a href="#">
 
@@ -397,40 +303,31 @@ Forgot Password?
 
 </div>
 
-<!-- LOGIN -->
-
-<button
-class="btn btn-success w-100 login-btn">
+<button class="login-btn">
 
 <i class="bi bi-box-arrow-in-right"></i>
 
-Login
+Continue Securely
 
 </button>
 
-<div class="divider my-4">
+<div class="divider">
 
-<span>
-
-OR
-
-</span>
+<span>OR</span>
 
 </div>
 
-<!-- GOOGLE -->
-
 <button
 type="button"
-class="btn btn-light border w-100">
+class="google-btn">
 
-<i class="bi bi-google text-danger"></i>
+<i class="bi bi-google"></i>
 
 Continue with Google
 
 </button>
 
-<p class="text-center mt-4">
+<p class="signup">
 
 Don't have an account?
 
@@ -442,21 +339,11 @@ Create Account
 
 </p>
 
-<hr>
+<div class="security">
 
-<div class="security text-center">
+<i class="bi bi-shield-check"></i>
 
-<i class="bi bi-shield-lock-fill text-success"></i>
-
-Secure SSL Login
-
-<br>
-
-<small>
-
-Your information is encrypted.
-
-</small>
+SSL Secured • End-to-End Encrypted
 
 </div>
 
@@ -470,45 +357,256 @@ Your information is encrypted.
 
 </div>
 
-<!-- FOOTER -->
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Why Choose AGRINXT AI?
+
+</h2>
+
+<p>
+
+Everything you need for smarter agricultural exports.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+
+<div class="feature-card">
+
+<div class="icon">
+
+<i class="bi bi-robot"></i>
+
+</div>
+
+<h5>AI Export Assistant</h5>
+
+<p>
+
+Get instant AI guidance for export procedures.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="feature-card">
+
+<div class="icon">
+
+<i class="bi bi-file-earmark-text"></i>
+
+</div>
+
+<h5>Smart Documents</h5>
+
+<p>
+
+Generate export documents in seconds.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="feature-card">
+
+<div class="icon">
+
+<i class="bi bi-graph-up-arrow"></i>
+
+</div>
+
+<h5>Market Analytics</h5>
+
+<p>
+
+Track demand, pricing and trends.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="feature-card">
+
+<div class="icon">
+
+<i class="bi bi-globe2"></i>
+
+</div>
+
+<h5>Global Buyers</h5>
+
+<p>
+
+Connect directly with verified buyers.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+<div class="container">
+
+<div class="row text-center">
+
+<div class="col-md-3 col-6">
+
+<div class="stat-box">
+
+<h2>10K+</h2>
+
+<p>Farmers</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3 col-6">
+
+<div class="stat-box">
+
+<h2>35+</h2>
+
+<p>Countries</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3 col-6">
+
+<div class="stat-box">
+
+<h2>50K+</h2>
+
+<p>Exports</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3 col-6">
+
+<div class="stat-box">
+
+<h2>24/7</h2>
+
+<p>Support</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
 <div class="container">
 
-<div class="row">
+<div class="row align-items-center">
 
-<div class="col-md-6">
+<div class="col-lg-6">
 
-© 2026 AGRINXT AI
+<div class="footer-logo">
+
+<i class="bi bi-globe-central-south-asia"></i>
+
+<h4>AGRINXT AI</h4>
+
+</div>
+
+<p>
+
+Empowering farmers, exporters and importers through Artificial Intelligence,
+secure documentation and global agricultural trade.
+
+</p>
 
 </div>
 
-<div class="col-md-6 text-md-end">
+<div class="col-lg-3">
 
-<a href="#">
+<h5>Quick Links</h5>
 
-Privacy Policy
+<ul>
 
-</a>
+<li><a href="#">Home</a></li>
 
-|
+<li><a href="#">About</a></li>
 
-<a href="#">
+<li><a href="#">Support</a></li>
 
-Terms
+<li><a href="#">Privacy Policy</a></li>
 
-</a>
-
-|
-
-<a href="#">
-
-Support
-
-</a>
+</ul>
 
 </div>
+
+<div class="col-lg-3">
+
+<h5>Contact</h5>
+
+<ul>
+
+<li><i class="bi bi-envelope"></i> support@agrinxt.ai</li>
+
+<li><i class="bi bi-globe"></i> www.agrinxt.ai</li>
+
+<li><i class="bi bi-telephone"></i> +91 XXXXX XXXXX</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="copyright">
+
+© 2026 AGRINXT AI | All Rights Reserved
 
 </div>
 
@@ -516,28 +614,14 @@ Support
 
 </footer>
 
-<!-- Bootstrap JS -->
+<!-- ================= BOOTSTRAP ================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
+<!-- ================= SCRIPT ================= -->
 
-function togglePassword(){
-
-let x=document.getElementById("password");
-
-if(x.type==="password")
-{
-x.type="text";
-}
-else
-{
-x.type="password";
-}
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
+
 </html>

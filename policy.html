@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Policies & Compliance | AGRINXT AI</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body class="dark">
+
+<!-- ===================== 1. SUBPAGE HEADER & GLASS NAVBAR ===================== -->
+<header class="subpage-header">
+    <!-- Glassmorphic Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Brand Logo -->
+            <a class="navbar-brand d-flex align-items-center gap-3" href="dashboard.html">
+                <img src="assets/logo.png" class="logo-img" alt="AGRINXT AI" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';">
+                <div id="logoFallback" class="brand-fallback-badge" style="display:none;">
+                    <i class="bi bi-globe-americas"></i>
+                </div>
+                <div>
+                    <h4 class="mb-0 fw-extrabold tracking-tight text-white">AGRINXT <span class="brand-highlight">AI</span></h4>
+                    <small class="brand-subtitle">Direct Export Intelligence for Farmers</small>
+                </div>
+            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list fs-2 text-white"></i>
+            </button>
+
+            <!-- Navbar Links: Home, Policy, Market Analysis, Documentation, AI Assistant -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-1 gap-lg-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html" id="navHome"><i class="bi bi-house-door-fill me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="policy.html" id="navPolicy"><i class="bi bi-shield-check me-1"></i> Policy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="market.html" id="navMarket"><i class="bi bi-graph-up-arrow me-1"></i> Market Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="documentation.html" id="navDoc"><i class="bi bi-file-earmark-text me-1"></i> Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="assistant.html" id="navAssistant"><i class="bi bi-robot me-1"></i> AI Assistant</a>
+                    </li>
+
+                    <!-- Language Switcher Dropdown -->
+                    <li class="nav-item ms-lg-2">
+                        <div class="glass-select-wrapper">
+                            <select class="language-dropdown" id="languageSelect" title="Select Language">
+                                <option value="en" selected>🌐 English</option>
+                                <option value="ta">தமிழ் (Tamil)</option>
+                                <option value="hi">हिन्दी (Hindi)</option>
+                            </select>
+                        </div>
+                    </li>
+
+                    <!-- Dark Mode Switcher Button -->
+                    <li class="nav-item ms-lg-2">
+                        <button class="glass-btn theme-toggle-btn" id="themeBtn" title="Toggle Light/Dark Theme" aria-label="Toggle Dark Mode">
+                            <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                        </button>
+                    </li>
+
+                    <!-- User Profile Dropdown -->
+                    <li class="nav-item dropdown ms-lg-2">
+                        <a class="profile-avatar-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Farmer Profile">
+                            <i class="bi bi-person-circle fs-5"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end glass-dropdown animate slideIn">
+                            <li class="dropdown-header">
+                                <span class="fw-bold text-dark dark-text-light" id="profileName">Kisan Samiti FPO</span>
+                                <small class="d-block text-muted" id="profileId">Member ID: AGRI-EXP-8942</small>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="policy.html"><i class="bi bi-file-earmark-check me-2 text-success"></i> My Export Compliance</a></li>
+                            <li><a class="dropdown-item" href="documentation.html"><i class="bi bi-journal-text me-2 text-primary"></i> Documentation Checklist</a></li>
+                            <li><a class="dropdown-item" href="market.html"><i class="bi bi-calculator me-2 text-warning"></i> My Crop Margins</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i> Sign Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Subpage Hero Banner Content -->
+    <div class="container pt-4">
+        <div class="subpage-breadcrumb">
+            <a href="dashboard.html"><i class="bi bi-house-door-fill me-1"></i> Home</a>
+            <i class="bi bi-chevron-right fs-8"></i>
+            <span>Government Regulatory Policies</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-end flex-wrap gap-3">
+            <div>
+                <span class="badge bg-success-subtle text-success mb-2 px-3 py-1.5">
+                    <i class="bi bi-shield-check me-1"></i> APEDA & DGFT Official Gazettes
+                </span>
+                <h1 class="subpage-hero-title mb-2" id="policyTitle">Official Agricultural Export Policies (APEDA & DGFT)</h1>
+                <p class="text-emerald-light max-w-800 mb-0" id="policySubtitle">
+                    Official gazette notifications often span 36 to 40 complex pages. We extract and summarize the critical compliance rules, standards, and subsidy schemes into actionable guides for farmers and FPOs.
+                </p>
+            </div>
+            <div class="d-flex gap-2">
+                <a href="assistant.html" class="btn btn-emerald-action">
+                    <i class="bi bi-robot me-1"></i> Ask AI Policy Questions
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===================== 2. MAIN POLICY GRID & FILTERS ===================== -->
+<main class="section-padding policy-section" id="policy">
+    <div class="container">
+        <!-- Filter & Search Toolbar -->
+        <div class="policy-toolbar glass-panel p-3 mb-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <!-- Category Pills -->
+            <div class="policy-category-pills d-flex gap-2 overflow-auto pb-1 max-w-100">
+                <button class="pill-btn active" data-category="all" id="catAll">All Policies</button>
+                <button class="pill-btn" data-category="Registration" id="catReg">Export Registration</button>
+                <button class="pill-btn" data-category="Phytosanitary" id="catPhyto">Phytosanitary Protocol</button>
+                <button class="pill-btn" data-category="Quality" id="catQuality">Quality & MRL</button>
+                <button class="pill-btn" data-category="Subsidies" id="catSubsidy">Subsidies & RoDTEP</button>
+            </div>
+
+            <!-- Search Box -->
+            <div class="policy-search-box position-relative w-100 max-w-300">
+                <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                <input type="text" class="form-control glass-search-input ps-5" id="policySearchInput" placeholder="Search policy by crop or keyword...">
+            </div>
+        </div>
+
+        <!-- Policies Dynamic Grid Container -->
+        <div class="row g-4" id="policiesGrid">
+            <!-- Injected dynamically via dashboard.js in English / Tamil / Hindi -->
+        </div>
+
+        <!-- Policy Assistance Callout Banner -->
+        <div class="policy-ai-helper-banner mt-5 glass-panel p-4 text-center">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-start">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="helper-icon-box">
+                        <i class="bi bi-patch-question-fill fs-2 text-emerald"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-1 text-dark dark-text-light" id="policyBannerTitle">Confused by a 40-Page Customs or Quarantine Clause?</h5>
+                        <p class="text-muted mb-0 fs-7" id="policyBannerSub">Click "Have Questions? Ask AI" on any policy card above to receive instant, simplified explanations in your local language.</p>
+                    </div>
+                </div>
+                <a href="assistant.html" class="btn btn-emerald-action shrink-0" id="policyBannerBtn">
+                    <i class="bi bi-chat-dots-fill me-2"></i> Open AI Assistant
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- ===================== 3. FOOTER ===================== -->
+<footer class="app-footer">
+    <div class="container">
+        <div class="row gy-4 mb-4">
+            <div class="col-lg-5">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <i class="bi bi-globe-americas fs-3 text-emerald"></i>
+                    <h4 class="mb-0 fw-bold text-white">AGRINXT <span class="text-emerald">AI</span></h4>
+                </div>
+                <p class="text-footer-muted max-w-400">
+                    India's premier AI-assisted agricultural export intelligence platform. Bridging rural farms and international buyer ports with verified data, fair pricing, and multilingual voice access.
+                </p>
+                <div class="official-logos-row d-flex gap-2 align-items-center flex-wrap">
+                    <span class="badge bg-dark-glass">APEDA Aligned</span>
+                    <span class="badge bg-dark-glass">DGFT Verified</span>
+                    <span class="badge bg-dark-glass">PQIS Compliant</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 offset-lg-1">
+                <h6 class="footer-title">Navigation</h6>
+                <ul class="footer-links">
+                    <li><a href="dashboard.html">Home</a></li>
+                    <li><a href="policy.html">Policies</a></li>
+                    <li><a href="market.html">Market Analysis</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="assistant.html">AI Assistant</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h6 class="footer-title">Official Portals</h6>
+                <ul class="footer-links">
+                    <li><a href="https://apeda.gov.in" target="_blank" rel="noopener">APEDA Portal</a></li>
+                    <li><a href="https://dgft.gov.in" target="_blank" rel="noopener">DGFT Website</a></li>
+                    <li><a href="https://plantquarantineindia.nic.in" target="_blank" rel="noopener">PQIS Quarantine</a></li>
+                    <li><a href="https://agmarknet.gov.in" target="_blank" rel="noopener">Agmarknet Rates</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2">
+                <h6 class="footer-title">Farmer Support</h6>
+                <p class="text-footer-muted fs-7 mb-2">Agri Export Helpline:</p>
+                <div class="fw-bold text-white fs-6">1800-11-2026</div>
+                <small class="text-footer-muted">Toll-Free (Mon - Sat 9am - 6pm)</small>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 pt-2 text-footer-muted fs-7">
+            <div>
+                &copy; 2026 AGRINXT AI. Dedicated to the Prosperity of Smallholder Farmers.
+            </div>
+            <div class="d-flex gap-4">
+                <a href="#" class="text-footer-muted">Privacy Policy</a>
+                <a href="#" class="text-footer-muted">Terms of Export</a>
+                <a href="#" class="text-footer-muted">Official Disclaimer</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap 5.3.3 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom Dashboard Logic -->
+<script src="dashboard.js"></script>
+
+</body>
+</html>

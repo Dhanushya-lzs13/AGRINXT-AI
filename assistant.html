@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice & Chat Export Assistant | AGRINXT AI</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body class="dark">
+
+<!-- ===================== 1. SUBPAGE HEADER & GLASS NAVBAR ===================== -->
+<header class="subpage-header">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-3" href="dashboard.html">
+                <img src="assets/logo.png" class="logo-img" alt="AGRINXT AI" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';">
+                <div id="logoFallback" class="brand-fallback-badge" style="display:none;">
+                    <i class="bi bi-globe-americas"></i>
+                </div>
+                <div>
+                    <h4 class="mb-0 fw-extrabold tracking-tight text-white">AGRINXT <span class="brand-highlight">AI</span></h4>
+                    <small class="brand-subtitle">Direct Export Intelligence for Farmers</small>
+                </div>
+            </a>
+
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list fs-2 text-white"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-1 gap-lg-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html" id="navHome"><i class="bi bi-house-door-fill me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="policy.html" id="navPolicy"><i class="bi bi-shield-check me-1"></i> Policy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="market.html" id="navMarket"><i class="bi bi-graph-up-arrow me-1"></i> Market Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="documentation.html" id="navDoc"><i class="bi bi-file-earmark-text me-1"></i> Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="assistant.html" id="navAssistant"><i class="bi bi-robot me-1"></i> AI Assistant</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-2">
+                        <div class="glass-select-wrapper">
+                            <select class="language-dropdown" id="languageSelect" title="Select Language">
+                                <option value="en" selected>🌐 English</option>
+                                <option value="ta">தமிழ் (Tamil)</option>
+                                <option value="hi">हिन्दी (Hindi)</option>
+                            </select>
+                        </div>
+                    </li>
+
+                    <li class="nav-item ms-lg-2">
+                        <button class="glass-btn theme-toggle-btn" id="themeBtn" title="Toggle Light/Dark Theme" aria-label="Toggle Dark Mode">
+                            <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                        </button>
+                    </li>
+
+                    <li class="nav-item dropdown ms-lg-2">
+                        <a class="profile-avatar-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Farmer Profile">
+                            <i class="bi bi-person-circle fs-5"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end glass-dropdown animate slideIn">
+                            <li class="dropdown-header">
+                                <span class="fw-bold text-dark dark-text-light" id="profileName">Kisan Samiti FPO</span>
+                                <small class="d-block text-muted" id="profileId">Member ID: AGRI-EXP-8942</small>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="policy.html"><i class="bi bi-file-earmark-check me-2 text-success"></i> My Export Compliance</a></li>
+                            <li><a class="dropdown-item" href="documentation.html"><i class="bi bi-journal-text me-2 text-primary"></i> Documentation Checklist</a></li>
+                            <li><a class="dropdown-item" href="market.html"><i class="bi bi-calculator me-2 text-warning"></i> My Crop Margins</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i> Sign Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Subpage Hero Banner Content -->
+    <div class="container pt-4">
+        <div class="subpage-breadcrumb">
+            <a href="dashboard.html"><i class="bi bi-house-door-fill me-1"></i> Home</a>
+            <i class="bi bi-chevron-right fs-8"></i>
+            <span>Multilingual AI Voice Assistant</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-end flex-wrap gap-3">
+            <div>
+                <span class="badge bg-info-subtle text-info mb-2 px-3 py-1.5">
+                    <i class="bi bi-robot me-1"></i> APEDA & DGFT Grounded Intelligence
+                </span>
+                <h1 class="subpage-hero-title mb-2" id="aiAssistantHeading">Ask Any Export Policy or Paperwork Doubt</h1>
+                <p class="text-emerald-light max-w-800 mb-0" id="aiAssistantSub">
+                    Speak or type in <strong>English, தமிழ், or हिन्दी</strong>. Our AI officer grounds every response in official trade gazettes, Foreign Trade Policy 2023-28, and quarantine protocols.
+                </p>
+            </div>
+            <div class="d-flex gap-2">
+                <span class="badge bg-dark-glass"><i class="bi bi-shield-check text-success me-1"></i> Zero Middlemen Biased</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===================== 2. INTERACTIVE AI ASSISTANT INTERFACE ===================== -->
+<main class="assistant-fullpage-wrapper" id="assistant">
+    <div class="container">
+        <div class="voice-assistant-card glass-panel">
+            <div class="row align-items-start gy-4">
+                <!-- Left Voice & Prompt Controls -->
+                <div class="col-lg-5 border-end-lg pe-lg-4">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="fs-7 fw-bold text-muted text-uppercase letter-spacing-1">Voice & Language Engine</span>
+                        <div class="d-flex gap-1">
+                            <span class="voice-chip active" data-lang="en">English</span>
+                            <span class="voice-chip" data-lang="ta">தமிழ்</span>
+                            <span class="voice-chip" data-lang="hi">हिन्दी</span>
+                        </div>
+                    </div>
+
+                    <!-- Voice Mic Control Button -->
+                    <div class="p-4 rounded-4 bg-light-mesh text-center mb-4">
+                        <button class="voice-mic-btn mx-auto mb-3" id="voiceMicBtn" title="Click to Speak">
+                            <i class="bi bi-mic-fill" id="micIcon"></i>
+                        </button>
+                        <strong class="d-block text-dark dark-text-light fs-6 mb-1" id="voiceStatusText">Tap microphone to speak your question</strong>
+                        <small class="text-muted d-block" id="voiceSubStatus">e.g., "What are the rules to get an APEDA RCMC certificate?"</small>
+                    </div>
+
+                    <!-- Suggested Prompts Chips -->
+                    <label class="form-label fw-bold text-dark dark-text-light fs-7 mb-2">
+                        <i class="bi bi-lightbulb-fill text-warning me-1"></i> Frequently Asked Questions:
+                    </label>
+                    <div class="assistant-quick-prompts mb-4">
+                        <span class="prompt-chip" onclick="askAiSpecific('How to get APEDA RCMC certificate?')">APEDA RCMC Steps</span>
+                        <span class="prompt-chip" onclick="askAiSpecific('What are the European Union MRL pesticide limits for Basmati Rice?')">EU MRL for Basmati</span>
+                        <span class="prompt-chip" onclick="askAiSpecific('What are the phytosanitary inspection steps for mango export?')">Phytosanitary Protocol</span>
+                        <span class="prompt-chip" onclick="askAiSpecific('What is the current Salem Turmeric export price in UAE and required curcumin grade?')">Turmeric in UAE</span>
+                        <span class="prompt-chip" onclick="askAiSpecific('What is the RoDTEP export subsidy rate for agricultural goods?')">RoDTEP Subsidy</span>
+                        <span class="prompt-chip" onclick="askAiSpecific('What are the mandatory documents for a first-time farmer exporter?')">Documents Checklist</span>
+                    </div>
+
+                    <!-- Trust and Source Citation Notice -->
+                    <div class="alert alert-emerald-note d-flex gap-2 align-items-start mb-0">
+                        <i class="bi bi-shield-check fs-5 mt-1 shrink-0 text-success"></i>
+                        <div class="fs-8">
+                            Every answer is generated by distilling official <strong>APEDA notifications</strong>, <strong>DGFT Trade Circulars</strong>, and <strong>PQIS quarantine manuals</strong>.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Chat Conversation Stream -->
+                <div class="col-lg-7 ps-lg-4">
+                    <div class="chat-preview-box assistant-chat-pane">
+                        <div class="chat-header d-flex justify-content-between align-items-center">
+                            <span class="d-flex align-items-center gap-2">
+                                <span class="ai-bot-avatar"><i class="bi bi-robot"></i></span>
+                                <strong id="chatHeaderTitle">AGRINXT Official Grounded AI</strong>
+                            </span>
+                            <span class="badge bg-success-subtle text-success">APEDA &amp; DGFT Verified</span>
+                        </div>
+
+                        <div class="chat-body assistant-history-container" id="chatPreviewBody">
+                            <div class="chat-bubble assistant-bubble">
+                                <p class="mb-2"><strong>Welcome to AGRINXT Export Intelligence!</strong></p>
+                                <p class="fs-7 mb-2">Ask any question regarding APEDA policies, Phytosanitary inspection, MRL limits, or documents required to export directly without middlemen.</p>
+                                <div class="citation-tag">
+                                    <i class="bi bi-shield-check text-success"></i> Grounded in Official Foreign Trade Policy 2023-28
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chat-footer">
+                            <div class="input-group">
+                                <input type="text" class="form-control glass-input" id="textQueryInput" placeholder="Type any question regarding export policies or documents...">
+                                <button class="btn btn-emerald-action" id="sendTextQueryBtn">
+                                    <i class="bi bi-send-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- ===================== 3. FOOTER ===================== -->
+<footer class="app-footer">
+    <div class="container">
+        <div class="row gy-4 mb-4">
+            <div class="col-lg-5">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <i class="bi bi-globe-americas fs-3 text-emerald"></i>
+                    <h4 class="mb-0 fw-bold text-white">AGRINXT <span class="text-emerald">AI</span></h4>
+                </div>
+                <p class="text-footer-muted max-w-400">
+                    India's premier AI-assisted agricultural export intelligence platform. Bridging rural farms and international buyer ports with verified data, fair pricing, and multilingual voice access.
+                </p>
+                <div class="official-logos-row d-flex gap-2 align-items-center flex-wrap">
+                    <span class="badge bg-dark-glass">APEDA Aligned</span>
+                    <span class="badge bg-dark-glass">DGFT Verified</span>
+                    <span class="badge bg-dark-glass">PQIS Compliant</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 offset-lg-1">
+                <h6 class="footer-title">Navigation</h6>
+                <ul class="footer-links">
+                    <li><a href="dashboard.html">Home</a></li>
+                    <li><a href="policy.html">Policies</a></li>
+                    <li><a href="market.html">Market Analysis</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="assistant.html">AI Assistant</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h6 class="footer-title">Official Portals</h6>
+                <ul class="footer-links">
+                    <li><a href="https://apeda.gov.in" target="_blank" rel="noopener">APEDA Portal</a></li>
+                    <li><a href="https://dgft.gov.in" target="_blank" rel="noopener">DGFT Website</a></li>
+                    <li><a href="https://plantquarantineindia.nic.in" target="_blank" rel="noopener">PQIS Quarantine</a></li>
+                    <li><a href="https://agmarknet.gov.in" target="_blank" rel="noopener">Agmarknet Rates</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2">
+                <h6 class="footer-title">Farmer Support</h6>
+                <p class="text-footer-muted fs-7 mb-2">Agri Export Helpline:</p>
+                <div class="fw-bold text-white fs-6">1800-11-2026</div>
+                <small class="text-footer-muted">Toll-Free (Mon - Sat 9am - 6pm)</small>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 pt-2 text-footer-muted fs-7">
+            <div>
+                &copy; 2026 AGRINXT AI. Dedicated to the Prosperity of Smallholder Farmers.
+            </div>
+            <div class="d-flex gap-4">
+                <a href="#" class="text-footer-muted">Privacy Policy</a>
+                <a href="#" class="text-footer-muted">Terms of Export</a>
+                <a href="#" class="text-footer-muted">Official Disclaimer</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap 5.3.3 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom Dashboard Logic -->
+<script src="dashboard.js"></script>
+
+</body>
+</html>

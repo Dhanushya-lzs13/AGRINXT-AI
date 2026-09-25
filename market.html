@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Analysis & Profit Calculator | AGRINXT AI</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body class="dark">
+
+<!-- ===================== 1. SUBPAGE HEADER & GLASS NAVBAR ===================== -->
+<header class="subpage-header">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-3" href="dashboard.html">
+                <img src="assets/logo.png" class="logo-img" alt="AGRINXT AI" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';">
+                <div id="logoFallback" class="brand-fallback-badge" style="display:none;">
+                    <i class="bi bi-globe-americas"></i>
+                </div>
+                <div>
+                    <h4 class="mb-0 fw-extrabold tracking-tight text-white">AGRINXT <span class="brand-highlight">AI</span></h4>
+                    <small class="brand-subtitle">Direct Export Intelligence for Farmers</small>
+                </div>
+            </a>
+
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list fs-2 text-white"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-1 gap-lg-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html" id="navHome"><i class="bi bi-house-door-fill me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="policy.html" id="navPolicy"><i class="bi bi-shield-check me-1"></i> Policy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="market.html" id="navMarket"><i class="bi bi-graph-up-arrow me-1"></i> Market Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="documentation.html" id="navDoc"><i class="bi bi-file-earmark-text me-1"></i> Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="assistant.html" id="navAssistant"><i class="bi bi-robot me-1"></i> AI Assistant</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-2">
+                        <div class="glass-select-wrapper">
+                            <select class="language-dropdown" id="languageSelect" title="Select Language">
+                                <option value="en" selected>🌐 English</option>
+                                <option value="ta">தமிழ் (Tamil)</option>
+                                <option value="hi">हिन्दी (Hindi)</option>
+                            </select>
+                        </div>
+                    </li>
+
+                    <li class="nav-item ms-lg-2">
+                        <button class="glass-btn theme-toggle-btn" id="themeBtn" title="Toggle Light/Dark Theme" aria-label="Toggle Dark Mode">
+                            <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                        </button>
+                    </li>
+
+                    <li class="nav-item dropdown ms-lg-2">
+                        <a class="profile-avatar-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Farmer Profile">
+                            <i class="bi bi-person-circle fs-5"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end glass-dropdown animate slideIn">
+                            <li class="dropdown-header">
+                                <span class="fw-bold text-dark dark-text-light" id="profileName">Kisan Samiti FPO</span>
+                                <small class="d-block text-muted" id="profileId">Member ID: AGRI-EXP-8942</small>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="policy.html"><i class="bi bi-file-earmark-check me-2 text-success"></i> My Export Compliance</a></li>
+                            <li><a class="dropdown-item" href="documentation.html"><i class="bi bi-journal-text me-2 text-primary"></i> Documentation Checklist</a></li>
+                            <li><a class="dropdown-item" href="market.html"><i class="bi bi-calculator me-2 text-warning"></i> My Crop Margins</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i> Sign Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Subpage Hero Banner Content -->
+    <div class="container pt-4">
+        <div class="subpage-breadcrumb">
+            <a href="dashboard.html"><i class="bi bi-house-door-fill me-1"></i> Home</a>
+            <i class="bi bi-chevron-right fs-8"></i>
+            <span>Global Market Analysis</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-end flex-wrap gap-3">
+            <div>
+                <span class="badge bg-warning-subtle text-warning mb-2 px-3 py-1.5">
+                    <i class="bi bi-currency-exchange me-1"></i> Live Port Rates & Arbitrage Insights
+                </span>
+                <h1 class="subpage-hero-title mb-2" id="marketSectionTitle">Market Analysis & Direct Export Margins</h1>
+                <p class="text-emerald-light max-w-800 mb-0" id="marketSectionSub">
+                    Compare local mandi prices with FOB port rates, calculate middleman margin savings, and discover top-paying destination countries.
+                </p>
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn btn-emerald-action" onclick="triggerAiCropQuery()">
+                    <i class="bi bi-robot me-1"></i> Ask AI Best Buyer Market
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===================== 2. INTERACTIVE PROFIT MARGIN CALCULATOR ===================== -->
+<main class="section-padding" id="market">
+    <div class="container">
+        <!-- Middleman vs Direct Export Calculator -->
+        <div class="calculator-card glass-panel mb-5">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5 border-end-lg pe-lg-4">
+                    <h4 class="fw-bold mb-4 d-flex align-items-center gap-2 text-dark dark-text-light">
+                        <i class="bi bi-calculator text-success"></i> <span id="calcTitle">Harvest Margin Calculator</span>
+                    </h4>
+                    
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold text-muted fs-7" id="lblCropSelect">Select Commodity</label>
+                        <select class="form-select custom-select-lg" id="calcCropSelect">
+                            <option value="turmeric" selected>🌶️ Salem Turmeric (Grade A Polish)</option>
+                            <option value="rice">🌾 Basmati Rice (Pusa 1121)</option>
+                            <option value="mango">🥭 Alphonso Mango (GI Tagged)</option>
+                            <option value="onion">🧅 Red Onion (Nashik Export Grade)</option>
+                            <option value="banana">🍌 G9 Cavendish Banana</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <label class="form-label fw-semibold text-muted fs-7 mb-0" id="lblVolumeSelect">Harvest Volume</label>
+                            <span class="badge bg-emerald-badge" id="calcQuantityDisplay">50 Quintals (5 MT)</span>
+                        </div>
+                        <input type="range" class="form-range custom-range" id="calcQuantitySlider" min="10" max="500" step="10" value="50">
+                        <div class="d-flex justify-content-between text-muted fs-8">
+                            <span>10 Quintals</span>
+                            <span>250 Quintals</span>
+                            <span>500 Quintals</span>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-emerald-note d-flex gap-2 align-items-start mb-0">
+                        <i class="bi bi-info-circle-fill fs-5 mt-1 shrink-0 text-success"></i>
+                        <div class="fs-7" id="calcNoticeText">
+                            Direct export through your <strong>Farmer Producer Organisation (FPO)</strong> eliminates trader commissions and retains 100% of export incentives.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 ps-lg-4">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="comparison-card loss-side">
+                                <div class="card-header-badge text-muted">
+                                    <i class="bi bi-shop me-1"></i> Local Trader / Mandi Payout
+                                </div>
+                                <div class="price-big text-danger" id="calcMandiTotal">₹3,80,000</div>
+                                <div class="rate-breakdown" id="calcMandiRate">Rate: ₹7,600 / Quintal</div>
+                                <div class="loss-note text-danger">
+                                    <i class="bi bi-exclamation-triangle-fill me-1"></i> Middlemen pocket terminal margin
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="comparison-card gain-side">
+                                <div class="card-header-badge text-success">
+                                    <i class="bi bi-airplane-engines me-1"></i> Direct Global Export (FOB)
+                                </div>
+                                <div class="price-big text-success" id="calcExportTotal">₹7,40,000</div>
+                                <div class="rate-breakdown" id="calcExportRate">Rate: ₹14,800 / Quintal</div>
+                                <div class="gain-note text-success">
+                                    <i class="bi bi-check-circle-fill me-1"></i> Direct bank credit via Letter of Credit
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="net-profit-banner mt-4">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                            <div>
+                                <span class="text-uppercase fs-8 letter-spacing-1 fw-bold text-emerald" id="calcExtraProfitLabel">Net Extra Farmer Profit:</span>
+                                <h3 class="mb-0 fw-extrabold text-dark dark-text-light" id="calcExtraProfit">+₹3,60,000 Extra Earnings (+94.7%)</h3>
+                            </div>
+                            <button class="btn btn-emerald-action" onclick="triggerAiCropQuery()">
+                                <i class="bi bi-robot me-1"></i> Ask AI How to Export This
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Spot Price Cards -->
+        <h4 class="fw-bold mb-4 text-dark dark-text-light"><i class="bi bi-clock-history text-emerald me-2"></i>Today's APMC Mandi vs. Port Benchmarks</h4>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="market-card glass-panel">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="fs-3">🌾</span>
+                            <div>
+                                <h5 class="fw-bold mb-0 text-dark dark-text-light">Basmati Rice 1121</h5>
+                                <small class="text-muted">Karnal APMC Hub</small>
+                            </div>
+                        </div>
+                        <span class="trend-badge up">▲ +2.4%</span>
+                    </div>
+                    <div class="price-comparison-grid">
+                        <div class="price-cell"><span class="label">Mandi Rate</span><span class="val">₹62 / kg</span></div>
+                        <div class="price-cell highlight"><span class="label">FOB Port</span><span class="val text-success">₹112 / kg</span></div>
+                    </div>
+                    <div class="mt-3 pt-3 border-top d-flex justify-content-between text-muted fs-7">
+                        <span>Spread Gain: <strong class="text-success">+80.6%</strong></span>
+                        <button class="btn btn-link p-0 text-emerald text-decoration-none" onclick="askAiSpecific('Basmati Rice export rules and FOB prices')">Ask AI &rarr;</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="market-card glass-panel">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="fs-3">🌶️</span>
+                            <div>
+                                <h5 class="fw-bold mb-0 text-dark dark-text-light">Salem Turmeric</h5>
+                                <small class="text-muted">Erode Spices Hub</small>
+                            </div>
+                        </div>
+                        <span class="trend-badge up">▲ +5.1%</span>
+                    </div>
+                    <div class="price-comparison-grid">
+                        <div class="price-cell"><span class="label">Mandi Rate</span><span class="val">₹148 / kg</span></div>
+                        <div class="price-cell highlight"><span class="label">FOB Port</span><span class="val text-success">₹245 / kg</span></div>
+                    </div>
+                    <div class="mt-3 pt-3 border-top d-flex justify-content-between text-muted fs-7">
+                        <span>Spread Gain: <strong class="text-success">+65.5%</strong></span>
+                        <button class="btn btn-link p-0 text-emerald text-decoration-none" onclick="askAiSpecific('Salem Turmeric Curcumin standards for Dubai and Europe')">Ask AI &rarr;</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="market-card glass-panel">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="fs-3">🧅</span>
+                            <div>
+                                <h5 class="fw-bold mb-0 text-dark dark-text-light">Nashik Red Onion</h5>
+                                <small class="text-muted">Lasalgaon Hub</small>
+                            </div>
+                        </div>
+                        <span class="trend-badge down">▼ -1.2%</span>
+                    </div>
+                    <div class="price-comparison-grid">
+                        <div class="price-cell"><span class="label">Mandi Rate</span><span class="val">₹32 / kg</span></div>
+                        <div class="price-cell highlight"><span class="label">FOB Port</span><span class="val text-success">₹58 / kg</span></div>
+                    </div>
+                    <div class="mt-3 pt-3 border-top d-flex justify-content-between text-muted fs-7">
+                        <span>Spread Gain: <strong class="text-success">+81.2%</strong></span>
+                        <button class="btn btn-link p-0 text-emerald text-decoration-none" onclick="askAiSpecific('Current minimum export price and documentation for Onion')">Ask AI &rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Destination Countries -->
+        <h4 class="fw-bold mb-4 text-dark dark-text-light"><i class="bi bi-globe-americas text-emerald me-2"></i>Top Export Destinations & Standards</h4>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="country-card glass-panel h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="country-flag">🇦🇪</span>
+                            <div><h5 class="fw-bold mb-0 text-dark dark-text-light">United Arab Emirates</h5><small class="text-muted">Dubai / Jebel Ali Port</small></div>
+                        </div>
+                        <span class="badge bg-success-subtle text-success">Demand: Ultra High</span>
+                    </div>
+                    <div class="country-stats-box mb-3">
+                        <div class="row text-center g-2">
+                            <div class="col-6 border-end"><small class="text-muted d-block">Avg FOB Price</small><strong class="fs-5 text-emerald">$1,480/MT</strong></div>
+                            <div class="col-6"><small class="text-muted d-block">Transit Time</small><strong class="fs-5 text-dark dark-text-light">3 - 4 Days</strong></div>
+                        </div>
+                    </div>
+                    <ul class="country-requirements-list mb-4">
+                        <li><i class="bi bi-check2-circle text-success me-1"></i> CEPA 0% Customs Duty</li>
+                        <li><i class="bi bi-check2-circle text-success me-1"></i> Phytosanitary Inspection (PQIS)</li>
+                        <li><i class="bi bi-check2-circle text-success me-1"></i> Arabic/English bilingual carton label</li>
+                    </ul>
+                    <button class="btn btn-outline-emerald w-100" onclick="askAiSpecific('What are the exact phytosanitary and packaging requirements for UAE import?')">
+                        <i class="bi bi-robot me-1"></i> Ask AI About UAE Norms
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="country-card glass-panel h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="country-flag">🇳🇱</span>
+                            <div><h5 class="fw-bold mb-0 text-dark dark-text-light">Netherlands (EU Hub)</h5><small class="text-muted">Rotterdam Port</small></div>
+                        </div>
+                        <span class="badge bg-warning-subtle text-warning">Highest Premium</span>
+                    </div>
+                    <div class="country-stats-box mb-3">
+                        <div class="row text-center g-2">
+                            <div class="col-6 border-end"><small class="text-muted d-block">Avg FOB Price</small><strong class="fs-5 text-emerald">$2,100/MT</strong></div>
+                            <div class="col-6"><small class="text-muted d-block">Transit Time</small><strong class="fs-5 text-dark dark-text-light">18 - 22 Days</strong></div>
+                        </div>
+                    </div>
+                    <ul class="country-requirements-list mb-4">
+                        <li><i class="bi bi-exclamation-circle text-warning me-1"></i> Strict EU MRL Residue Testing</li>
+                        <li><i class="bi bi-check2-circle text-success me-1"></i> Curcumin &gt; 4% pays +35% bonus</li>
+                        <li><i class="bi bi-check2-circle text-success me-1"></i> TRACES Electronic CoI required</li>
+                    </ul>
+                    <button class="btn btn-outline-emerald w-100" onclick="askAiSpecific('Explain European Union MRL and pesticide limits for Indian exports')">
+                        <i class="bi bi-robot me-1"></i> Ask AI About EU Norms
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="country-card glass-panel h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="country-flag">🇸🇦</span>
+                            <div><h5 class="fw-bold mb-0 text-dark dark-text-light">Saudi Arabia</h5><small class="text-muted">Jeddah Islamic Port</small></div>
+                        </div>
+                        <span class="badge bg-primary-subtle text-primary">Mass Volume</span>
+                    </div>
+                    <div class="country-stats-box mb-3">
+                        <div class="row text-center g-2">
+                            <div class="col-6 border-end"><small class="text-muted d-block">Avg FOB Price</small><strong class="fs-5 text-emerald">$1,260/MT</strong></div>
+                            <div class="col-6"><small class="text-muted d-block">Transit Time</small><strong class="fs-5 text-dark dark-text-light">6 - 8 Days</strong></div>
+                        </div>
+                    </div>
+                    <ul class="country-requirements-list mb-4">
+                        <li><i class="bi bi-check2-circle text-success me-1"></i> SFDA Exporter Registration</li>
+                        <li><i class="bi bi-check2-circle text-success me-1"></i> Non-GMO Certificate mandatory</li>
+                        <li><i class="bi bi-check2-circle text-success me-1"></i> Fast sea lane turnaround</li>
+                    </ul>
+                    <button class="btn btn-outline-emerald w-100" onclick="askAiSpecific('How to register with SFDA for exporting rice and spices to Saudi Arabia?')">
+                        <i class="bi bi-robot me-1"></i> Ask AI About Saudi Norms
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- ===================== 3. FOOTER ===================== -->
+<footer class="app-footer">
+    <div class="container">
+        <div class="row gy-4 mb-4">
+            <div class="col-lg-5">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <i class="bi bi-globe-americas fs-3 text-emerald"></i>
+                    <h4 class="mb-0 fw-bold text-white">AGRINXT <span class="text-emerald">AI</span></h4>
+                </div>
+                <p class="text-footer-muted max-w-400">
+                    India's premier AI-assisted agricultural export intelligence platform. Bridging rural farms and international buyer ports with verified data, fair pricing, and multilingual voice access.
+                </p>
+                <div class="official-logos-row d-flex gap-2 align-items-center flex-wrap">
+                    <span class="badge bg-dark-glass">APEDA Aligned</span>
+                    <span class="badge bg-dark-glass">DGFT Verified</span>
+                    <span class="badge bg-dark-glass">PQIS Compliant</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2 offset-lg-1">
+                <h6 class="footer-title">Navigation</h6>
+                <ul class="footer-links">
+                    <li><a href="dashboard.html">Home</a></li>
+                    <li><a href="policy.html">Policies</a></li>
+                    <li><a href="market.html">Market Analysis</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="assistant.html">AI Assistant</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h6 class="footer-title">Official Portals</h6>
+                <ul class="footer-links">
+                    <li><a href="https://apeda.gov.in" target="_blank" rel="noopener">APEDA Portal</a></li>
+                    <li><a href="https://dgft.gov.in" target="_blank" rel="noopener">DGFT Website</a></li>
+                    <li><a href="https://plantquarantineindia.nic.in" target="_blank" rel="noopener">PQIS Quarantine</a></li>
+                    <li><a href="https://agmarknet.gov.in" target="_blank" rel="noopener">Agmarknet Rates</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2">
+                <h6 class="footer-title">Farmer Support</h6>
+                <p class="text-footer-muted fs-7 mb-2">Agri Export Helpline:</p>
+                <div class="fw-bold text-white fs-6">1800-11-2026</div>
+                <small class="text-footer-muted">Toll-Free (Mon - Sat 9am - 6pm)</small>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 pt-2 text-footer-muted fs-7">
+            <div>
+                &copy; 2026 AGRINXT AI. Dedicated to the Prosperity of Smallholder Farmers.
+            </div>
+            <div class="d-flex gap-4">
+                <a href="#" class="text-footer-muted">Privacy Policy</a>
+                <a href="#" class="text-footer-muted">Terms of Export</a>
+                <a href="#" class="text-footer-muted">Official Disclaimer</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap 5.3.3 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom Dashboard Logic -->
+<script src="dashboard.js"></script>
+
+</body>
+</html>
